@@ -6,4 +6,6 @@ Expected Result: newPizza; undefined currentId: 0, pizza: {}
 
 Describe: function AssignId()
 
-Test: It will assign an idea to object "newPizza".
+Test: It will assign an id to object "newPizza".
+Code: newPizza.assignId()
+Expected Result: newPizza; undefined currentId: 1, pizza {}

@@ -6,6 +6,11 @@ function NewPizza() {
   this.currentId = 0
 }
 
+NewPizza.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
+
 
 
 
