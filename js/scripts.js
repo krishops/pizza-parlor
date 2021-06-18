@@ -40,7 +40,7 @@ NewParlor.prototype.pizzaPrice = function() {
 NewParlor.prototype.itemPrices = function() {
   switch (this.size)  {
     case ("small"):
-    this.pizzaSize === 5
+    this.pizzaSize += 5
   }
 }
 
