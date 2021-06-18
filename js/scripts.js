@@ -27,7 +27,7 @@ NewParlor.prototype.pizzaPrice = function(id, pizzaSize, toppingOne, toppingTwo,
   this.pizza[id].pizzaPrice = parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour);
   return this.pizza[id].pizzaPrice;
 }
-console.log(pizzaPrice)
+
 
 
 // Business Logic for Pizza
@@ -56,6 +56,7 @@ $(document).ready(function () {
     newParlor.addPizza(newPizza);
     console.log(newPizza);
     newParlor.pizzaPrice(newPizza["id"], inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour);
+    $("#pizza-price").html(newParlor.pizzaPrice);
     
     });
   });
