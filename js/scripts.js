@@ -22,30 +22,30 @@ NewParlor.prototype.findPizza = function(id) {
   return false;
 };
 
-NewParlor.prototype.totalPrice = function() {
-  this.pizzaPrice = 0
-
-NewParlor.prototype.calculatePrice = function() {
-  switch (this.findPizza())  {
-        case (this.size === "small"):
-          this.pizzaPrice += 5;
-          break;
-        case ("medium"):
-          this.pizzaPrice += 7;
-          break;
-        case ("large"):
-          this.pizzaPrice += 9;
-          break;
+// NewParlor.prototype.totalPrice = function() {
+//   this.pizzaPrice = 0
+// }
+// NewParlor.prototype.calculatePrice = function() {
+//   switch (this.findPizza())  {
+//         case (this.size === "small"):
+//           this.pizzaPrice += 5;
+//           break;
+//         case ("medium"):
+//           this.pizzaPrice += 7;
+//           break;
+//         case ("large"):
+//           this.pizzaPrice += 9;
+//           break;
       
-}
-return pizzaPrice;
+// }
+// return pizzaPrice;
 
-}
-console.log(this.pizzaPrice)
-// NewParlor.prototype.pizzaPrice = function() {
-//   this.pizzaPrice = (this.pizzaSize) + parseInt(this.pizza[id].toppingOne) + parseInt(this.pizza[id].toppingTwo) + parseInt(this.pizza[id].toppingThree) + parseInt(this.pizza[id].toppingFour)
 // }
 
+NewParlor.prototype.pizzaPrice = function(id, pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
+  this.pizza[id].pizzaPrice = parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour)
+}
+console.log(this.pizzaPrice)
 
 // NewParlor.prototype.itemPrices = function() {
 
@@ -54,8 +54,8 @@ console.log(this.pizzaPrice)
 // }
 
 // Business Logic for Pizza
-function NewPizza(size, toppingOne, toppingTwo, toppingThree, toppingFour) {
-  this.size = size;
+function NewPizza(pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
+  this.pizzaSize = pizzaSize;
   this.toppingOne = toppingOne;
   this.toppingTwo = toppingTwo;
   this.toppingThree = toppingThree;
@@ -83,13 +83,14 @@ $(document).ready(function () {
     const inputtedToppingFour = $("#topping-four").val();
     let newPizza = new NewPizza(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
     newParlor.addPizza(newPizza);
-    console.log(newPizza)
+    console.log(newPizza);
+    newParlor.pizzaPrice(newParlor["id"], inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour);
     // newParlor.calculatePrice(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
-    $(".pizza-size").html(inputtedSize);
-    $(".first-topping").html(inputtedToppingOne);
-    $(".second-topping").html(inputtedToppingTwo);
-    $(".third-topping").html(inputtedToppingThree);
-    $(".fourth-topping").html(inputtedToppingFour);
+    // $(".pizza-size").html(inputtedSize);
+    // $(".first-topping").html(inputtedToppingOne);
+    // $(".second-topping").html(inputtedToppingTwo);
+    // $(".third-topping").html(inputtedToppingThree);
+    // $(".fourth-topping").html(inputtedToppingFour);
 
     
       // if (inputtedSize === "small") {
