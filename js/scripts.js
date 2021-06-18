@@ -6,6 +6,12 @@ function NewParlor() {
   this.currentId = 0
 }
 
+NewParlor.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizza[pizza.id] = pizza;
+}
+
+
 NewParlor.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
