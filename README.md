@@ -25,4 +25,5 @@ Expected Result: newParlor {currentId: 1 pizza:{1, NewPizza}}
 Describe: NewParlor.prototype.pizzaPrice()
 
 Test: It will add the price of size and toppings and output the total price for the pizza.
-Code:
+Code: HTML form input 
+Result: pizzaPrice: (17) 

@@ -2,7 +2,6 @@
 function NewParlor() {
   this.pizza = {}
   this.currentId = 0
-  this.pizzaPrice = 0
 }
 
 NewParlor.prototype.addPizza = function(pizza) {
@@ -22,36 +21,14 @@ NewParlor.prototype.findPizza = function(id) {
   return false;
 };
 
-// NewParlor.prototype.totalPrice = function() {
-//   this.pizzaPrice = 0
-// }
-// NewParlor.prototype.calculatePrice = function() {
-//   switch (this.findPizza())  {
-//         case (this.size === "small"):
-//           this.pizzaPrice += 5;
-//           break;
-//         case ("medium"):
-//           this.pizzaPrice += 7;
-//           break;
-//         case ("large"):
-//           this.pizzaPrice += 9;
-//           break;
-      
-// }
-// return pizzaPrice;
 
-// }
 
 NewParlor.prototype.pizzaPrice = function(id, pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
-  this.pizza[id].pizzaPrice = parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour)
+  this.pizza[id].pizzaPrice = parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour);
+  return this.pizza[id].pizzaPrice;
 }
-console.log(this.pizzaPrice)
+console.log(pizzaPrice)
 
-// NewParlor.prototype.itemPrices = function() {
-
-// function pizzaPrice() {
-//   if (inputtedSize === "small")
-// }
 
 // Business Logic for Pizza
 function NewPizza(pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
@@ -62,13 +39,7 @@ function NewPizza(pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) 
   this.toppingFour = toppingFour;  //Possibly refactor this into nested objects
 }
 
-// NewPizza.prototype.findPrice = function() {
-//   this.pizzaPrice = 0
-//   if (this.size === "small")  {
-//     this.pizzaPrice += 5;
-//   }
-//   console.log("HUZZAH", this.pizzaPrice)
-// }
+
 
 //UI Logic
 let newParlor = new NewParlor();
@@ -84,22 +55,8 @@ $(document).ready(function () {
     let newPizza = new NewPizza(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
     newParlor.addPizza(newPizza);
     console.log(newPizza);
-    newParlor.pizzaPrice(newParlor["id"], inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour);
-    // newParlor.calculatePrice(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
-    // $(".pizza-size").html(inputtedSize);
-    // $(".first-topping").html(inputtedToppingOne);
-    // $(".second-topping").html(inputtedToppingTwo);
-    // $(".third-topping").html(inputtedToppingThree);
-    // $(".fourth-topping").html(inputtedToppingFour);
-
+    newParlor.pizzaPrice(newPizza["id"], inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour);
     
-      // if (inputtedSize === "small") {
-      //   return 5;
-      // } else if (inputtedSize === "medium") {
-      //   return 7;
-      // } else if (inputtedSize === "large") {
-      //   return 9;}     
-      //   newParlor.calculatePrice(inputtedSize, 0, 0, 0, 0) 
     });
   });
 
@@ -138,3 +95,53 @@ $(document).ready(function () {
   // buttons.empty();
   // buttons.append("<button class ='deleteButton' id=" + + contact.id + ">Delete</button>");
 // 
+
+
+// NewParlor.prototype.itemPrices = function() {
+
+// function pizzaPrice() {
+//   if (inputtedSize === "small")
+// }
+
+ // newParlor.calculatePrice(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
+    // $(".pizza-size").html(inputtedSize);
+    // $(".first-topping").html(inputtedToppingOne);
+    // $(".second-topping").html(inputtedToppingTwo);
+    // $(".third-topping").html(inputtedToppingThree);
+    // $(".fourth-topping").html(inputtedToppingFour);
+
+    
+      // if (inputtedSize === "small") {
+      //   return 5;
+      // } else if (inputtedSize === "medium") {
+      //   return 7;
+      // } else if (inputtedSize === "large") {
+      //   return 9;}     
+      //   newParlor.calculatePrice(inputtedSize, 0, 0, 0, 0)
+
+      // NewPizza.prototype.findPrice = function() {
+//   this.pizzaPrice = 0
+//   if (this.size === "small")  {
+//     this.pizzaPrice += 5;
+//   }
+//   console.log("HUZZAH", this.pizzaPrice)
+// }
+// NewParlor.prototype.totalPrice = function() {
+//   this.pizzaPrice = 0
+// }
+// NewParlor.prototype.calculatePrice = function() {
+//   switch (this.findPizza())  {
+//         case (this.size === "small"):
+//           this.pizzaPrice += 5;
+//           break;
+//         case ("medium"):
+//           this.pizzaPrice += 7;
+//           break;
+//         case ("large"):
+//           this.pizzaPrice += 9;
+//           break;
+      
+// }
+// return pizzaPrice;
+
+// }
