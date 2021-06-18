@@ -19,5 +19,10 @@ Expected Result: newPizza {size: undefined toppingOne: undefined toppingTwo: und
 Describe: NewParlor.prototype.addPizza(newPizza)
 
 Test: It will add a new pizza to the "newParlor" object.
-Code. newParlor.addPizza(newPizza)
+Code: newParlor.addPizza(newPizza)
 Expected Result: newParlor {currentId: 1 pizza:{1, NewPizza}}
+
+Describe: NewParlor.prototype.pizzaPrice()
+
+Test: It will add the price of size and toppings and output the total price for the pizza.
+Code:

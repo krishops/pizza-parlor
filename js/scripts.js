@@ -17,6 +17,13 @@ NewParlor.prototype.assignId = function() {
   return this.currentId;
 };
 
+NewParlor.prototype.findPizza = function(id) {
+  if (this.pizza[id] != undefined) {
+    return this.pizza[id];
+  }
+  return false;
+};
+
 // Business Logic for Pizza
 function NewPizza(Size, toppingOne, toppingTwo, toppingThree, toppingFour) {
   this.size = Size;
@@ -27,11 +34,33 @@ function NewPizza(Size, toppingOne, toppingTwo, toppingThree, toppingFour) {
 }
 
 NewParlor.prototype.pizzaPrice = function() {
-  this.pizzaPrice = parseInt(this.pizza[id].size) + parseInt(this.pizza[id].toppingOne) + parseInt(this.pizza[id].toppingTwo) + parseInt(this.pizza[id].toppingThree) + parseInt(this.pizza[id].toppingFour)
+  this.pizzaPrice = (this.pizzaSize) + parseInt(this.pizza[id].toppingOne) + parseInt(this.pizza[id].toppingTwo) + parseInt(this.pizza[id].toppingThree) + parseInt(this.pizza[id].toppingFour)
+}
+
+NewParlor.prototype.itemPrices = function() {
+  switch (this.size)  {
+    case ("small"):
+    this.pizzaSize === 5
+  }
 }
 
 //UI Logic
 let newParlor = new NewParlor();
+
+// function showPizza(pizzaId) {
+//   const pizza = newParlor.findPizza(pizzaId);
+//   // $("#show-pizza").show();
+//   $(".pizza-size").html(pizza.size);
+//   $(".first-topping").html(pizza.toppingOne);
+//   $(".second-topping").html(pizza.toppingTwo);
+//   $(".third-topping").html(pizza.toppingThree);
+//   $(".fourth-topping").html(pizza.toppingFour);
+  
+  // let buttons = $("#buttons");
+  // buttons.empty();
+  // buttons.append("<button class ='deleteButton' id=" + + contact.id + ">Delete</button>");
+// }
+
 
 $(document).ready(function()  {
   $("form#pizza-parlor").submit(function(event) {
@@ -43,5 +72,26 @@ $(document).ready(function()  {
     const inputtedToppingFour = $("#topping-four").val();
     let newPizza = new NewPizza(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
     newParlor.addPizza(newPizza);
+    console.log(newPizza)
+    $(".pizza-size").html(inputtedSize);
+    $(".first-topping").html(inputtedToppingOne);
+    $(".second-topping").html(inputtedToppingTwo);
+    $(".third-topping").html(inputtedToppingThree);
+    $(".fourth-topping").html(inputtedToppingFour);
   })
 })
+
+
+const color = "red";
+switch (color) {
+  case ("red"):
+    console.log("Red!");
+  case ("green"):
+    console.log("Green!");
+    break;
+  case ("blue"):
+    console.log("Blue!");
+    break;
+  default:
+    console.log("It's not red, blue, or green.");
+}
