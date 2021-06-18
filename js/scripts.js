@@ -30,6 +30,18 @@ NewParlor.prototype.pizzaPrice = function() {
   this.pizzaPrice = parseInt(this.pizza[id].size) + parseInt(this.pizza[id].toppingOne) + parseInt(this.pizza[id].toppingTwo) + parseInt(this.pizza[id].toppingThree) + parseInt(this.pizza[id].toppingFour)
 }
 
-
-
 //UI Logic
+let newParlor = new NewParlor();
+
+$(document).ready(function()  {
+  $("form#pizza-parlor").submit(function(event) {
+    event.preventDefault();
+    const inputtedSize = $("input:radio[name=select-size]:checked").val();
+    const inputtedToppingOne = $("#topping-one").val();
+    const inputtedToppingTwo = $("#topping-two").val();
+    const inputtedToppingThree = $("#topping-three").val();
+    const inputtedToppingFour = $("#topping-four").val();
+    let newPizza = new NewPizza(inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour)
+    newParlor.addPizza(newPizza);
+  })
+})
