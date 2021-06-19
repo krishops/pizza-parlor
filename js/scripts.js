@@ -2,6 +2,7 @@
 function NewParlor() {
   this.pizza = {}
   this.currentId = 0
+
 }
 
 NewParlor.prototype.addPizza = function(pizza) {
@@ -21,14 +22,10 @@ NewParlor.prototype.findPizza = function(id) {
   return false;
 };
 
-
-
 NewParlor.prototype.pizzaPrice = function(id, pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
-  this.pizza[id].pizzaPrice = parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour);
+  this.pizza[id].pizzaPrice += parseInt(pizzaSize) + parseInt(toppingOne) + parseInt(toppingTwo) + parseInt(toppingThree) + parseInt(toppingFour);
   return this.pizza[id].pizzaPrice;
 }
-
-
 
 // Business Logic for Pizza
 function NewPizza(pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) {
@@ -36,10 +33,8 @@ function NewPizza(pizzaSize, toppingOne, toppingTwo, toppingThree, toppingFour) 
   this.toppingOne = toppingOne;
   this.toppingTwo = toppingTwo;
   this.toppingThree = toppingThree;
-  this.toppingFour = toppingFour;  //Possibly refactor this into nested objects
+  this.toppingFour = toppingFour; //Possibly refactor this into nested objects
 }
-
-
 
 //UI Logic
 let newParlor = new NewParlor();
@@ -56,10 +51,16 @@ $(document).ready(function () {
     newParlor.addPizza(newPizza);
     console.log(newPizza);
     newParlor.pizzaPrice(newPizza["id"], inputtedSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree, inputtedToppingFour);
-    $("#pizza-price").html(newParlor.pizzaPrice);
+    showPrice(pizzaId)
+
+   //Don't know what to do here.
     
     });
-  });
+    // function showPrice(pizzaId) {
+    //   const thisPizza = newParlor.findPizza(pizzaId);
+    //   $("#pizza-price").html(thisPizza.pizzaPrice);
+    // } Something needs to happen with this probably ---- add contact listeners the same way I did with Address Book?
+  })
 
 
 
