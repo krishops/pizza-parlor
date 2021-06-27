@@ -23,7 +23,7 @@ This project accepts user responses for pizza toppings to output a total price o
 
 ## Known Bugs
 
-* Project does not output the total to the user.
+* There are no known bugs in this program.
 
 ## License
 
